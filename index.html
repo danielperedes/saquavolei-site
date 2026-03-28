@@ -26,9 +26,11 @@
             backdrop-filter: blur(10px);
             z-index: 1000; transition: all 0.3s;
         }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
-        .logo { font-size: 1.8rem; font-weight: 700; color: var(--branco); letter-spacing: 1px; }
-        .logo span { color: var(--amarelo); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 0.7rem 0; }
+        .logo-nav { display: flex; align-items: center; gap: 0.8rem; }
+        .logo-nav img { height: 50px; width: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--amarelo); }
+        .logo-nav span { font-size: 1.6rem; font-weight: 700; color: var(--branco); letter-spacing: 1px; }
+        .logo-nav span em { color: var(--amarelo); font-style: normal; }
         .nav-links { display: flex; list-style: none; gap: 2rem; }
         .nav-links a { color: var(--branco); text-decoration: none; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: var(--amarelo); }
@@ -38,12 +40,13 @@
         /* HERO */
         #hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,80,140,0.72), rgba(244,162,97,0.45)),
-                url('https://images.unsplash.com/photo-1558618047-3c8c76ca3350?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(0,60,120,0.65), rgba(0,60,120,0.45)),
+                url('images/trofeu.jpg') center/cover no-repeat;
             display: flex; align-items: center; text-align: center; color: var(--branco);
         }
         #hero .hero-content { width: 100%; }
-        #hero h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 1rem; animation: fadeInUp 1s ease; line-height: 1.2; }
+        .hero-logo { width: 130px; height: 130px; border-radius: 50%; border: 4px solid var(--amarelo); margin: 0 auto 1.5rem; display: block; object-fit: cover; animation: fadeInUp 0.8s ease; }
+        #hero h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 1rem; animation: fadeInUp 1s ease 0.1s both; line-height: 1.2; }
         #hero p { font-size: 1.4rem; margin-bottom: 2rem; animation: fadeInUp 1s ease 0.2s both; opacity: 0.95; }
         .btn {
             display: inline-block; padding: 1rem 2.2rem;
@@ -84,6 +87,19 @@
         /* MODALIDADES */
         #modalidades { background: linear-gradient(135deg, #f0f8ff, #fff8ee); }
 
+        /* HORÁRIOS */
+        #horarios { background: var(--azul-mar); color: var(--branco); }
+        #horarios h2 { color: var(--branco); }
+        #horarios .divider { background: var(--amarelo); }
+        #horarios .section-sub { color: rgba(255,255,255,0.8); }
+        .horario-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+        .horario-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); border-radius: 16px; padding: 1.8rem; text-align: center; backdrop-filter: blur(5px); }
+        .horario-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--amarelo); }
+        .horario-card p { font-size: 1.5rem; font-weight: 700; }
+        .horario-card small { font-size: 0.85rem; opacity: 0.8; }
+        .turmas-badge { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 2rem; }
+        .turmas-badge span { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: var(--branco); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.9rem; }
+
         /* DIFERENCIAIS */
         #diferenciais { background: var(--branco); }
 
@@ -98,7 +114,7 @@
         #galeria { background: var(--areia); }
         .galeria-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
         .galeria-item {
-            height: 220px;
+            height: 240px;
             background-size: cover; background-position: center;
             border-radius: 15px;
             position: relative; overflow: hidden;
@@ -107,10 +123,10 @@
         .galeria-item:hover { transform: scale(1.03); }
         .galeria-item::before {
             content: ''; position: absolute; inset: 0;
-            background: rgba(0,119,190,0.3); border-radius: 15px;
+            background: rgba(0,119,190,0.25); border-radius: 15px;
             transition: background 0.3s;
         }
-        .galeria-item:hover::before { background: rgba(0,119,190,0.1); }
+        .galeria-item:hover::before { background: rgba(0,119,190,0.05); }
 
         /* LOCALIZACAO */
         #localizacao { background: var(--branco); }
@@ -132,8 +148,10 @@
         /* FOOTER */
         footer { background: #0d1b2a; color: var(--branco); padding: 3rem 0 1.5rem; }
         .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
-        .footer-logo { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .footer-logo span { color: var(--amarelo); }
+        .footer-logo { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; }
+        .footer-logo img { height: 45px; width: 45px; border-radius: 50%; object-fit: cover; }
+        .footer-logo span { font-size: 1.4rem; font-weight: 700; color: var(--branco); }
+        .footer-logo span em { color: var(--amarelo); font-style: normal; }
         footer h4 { color: var(--amarelo); margin-bottom: 1rem; }
         footer ul { list-style: none; }
         footer ul li { margin-bottom: 0.5rem; }
@@ -195,12 +213,15 @@
     <!-- HEADER -->
     <header>
         <nav class="container">
-            <div class="logo">Saqua<span>vôlei</span></div>
+            <div class="logo-nav">
+                <img src="images/logo-saquavolei.jpg" alt="Logo Saquavôlei">
+                <span>Saqua<em>vôlei</em></span>
+            </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#hero" onclick="closeMenu()">Início</a></li>
                 <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
                 <li><a href="#modalidades" onclick="closeMenu()">Turmas</a></li>
-                <li><a href="#diferenciais" onclick="closeMenu()">Diferenciais</a></li>
+                <li><a href="#horarios" onclick="closeMenu()">Horários</a></li>
                 <li><a href="#avaliacoes" onclick="closeMenu()">Avaliações</a></li>
                 <li><a href="#localizacao" onclick="closeMenu()">Localização</a></li>
             </ul>
@@ -213,10 +234,11 @@
     <!-- HERO -->
     <section id="hero">
         <div class="container hero-content">
+            <img src="images/logo-saquavolei.jpg" alt="Logo Saquavôlei" class="hero-logo">
             <h1>Treine vôlei de praia em Saquarema com quem entende do jogo</h1>
             <p>Do iniciante ao competitivo, venha evoluir no Saquavôlei</p>
-            <a href="https://wa.me/5521974675220" target="_blank" class="btn">🏐 Agendar Aula</a>
-            <a href="https://wa.me/5521974675220" target="_blank" class="btn btn-secondary">💬 Fale Conosco</a>
+            <a href="https://wa.me/5522992017662?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20no%20Saquav%C3%B4lei!" target="_blank" class="btn">🏐 Agendar Aula</a>
+            <a href="https://wa.me/5522992017662" target="_blank" class="btn btn-secondary">💬 Fale Conosco</a>
         </div>
     </section>
 
@@ -238,7 +260,7 @@
                         <span class="badge">🏐 Todos os Níveis</span>
                     </div>
                 </div>
-                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Treino de vôlei de praia no Saquavôlei">
+                <img src="images/galeria4.jpg" alt="Turma do Saquavôlei na praia">
             </div>
         </div>
     </section>
@@ -269,11 +291,49 @@
                     <p>Treinos técnicos e táticos intensos para elevar seu jogo a outro nível.</p>
                 </div>
                 <div class="card">
+                    <i class="fas fa-child"></i>
+                    <div class="card-tag">Crianças e jovens</div>
+                    <h3>Infantil</h3>
+                    <p>Iniciação esportiva com foco em desenvolvimento motor, coordenação e diversão para os pequenos.</p>
+                </div>
+                <div class="card">
                     <i class="fas fa-trophy"></i>
                     <div class="card-tag">Para competidores</div>
                     <h3>Competitivo</h3>
                     <p>Preparação focada para torneios e circuitos. Periodização e estratégia de alto rendimento.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HORÁRIOS -->
+    <section id="horarios" class="fade-in">
+        <div class="container">
+            <h2>Horários de Treino</h2>
+            <div class="divider"></div>
+            <p class="section-sub">Treinos às segundas, quartas e sextas-feiras</p>
+            <div class="horario-grid">
+                <div class="horario-card">
+                    <h3>☀️ Segunda-feira</h3>
+                    <p>7h e 17h</p>
+                    <small>Todos os níveis</small>
+                </div>
+                <div class="horario-card">
+                    <h3>⚡ Quarta-feira</h3>
+                    <p>7h e 17h</p>
+                    <small>Todos os níveis</small>
+                </div>
+                <div class="horario-card">
+                    <h3>🏆 Sexta-feira</h3>
+                    <p>7h e 17h</p>
+                    <small>Todos os níveis</small>
+                </div>
+            </div>
+            <div class="turmas-badge">
+                <span>🌱 Iniciante</span>
+                <span>⚡ Intermediário</span>
+                <span>🔥 Avançado</span>
+                <span>👶 Infantil</span>
             </div>
         </div>
     </section>
@@ -286,23 +346,23 @@
             <div class="cards">
                 <div class="card">
                     <i class="fas fa-chalkboard-teacher"></i>
-                    <h3>Professores Qualificados</h3>
-                    <p>Profissionais experientes no vôlei de praia, com metodologia eficiente para todos os níveis.</p>
+                    <h3>Prof. Pedro e Equipe</h3>
+                    <p>Profissionais experientes e comprometidos em sempre passar os fundamentos com as melhores técnicas.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-heart"></i>
                     <h3>Ambiente Acolhedor</h3>
-                    <p>Um espaço onde alunos de todas as idades e níveis se sentem bem-vindos e parte de uma família.</p>
+                    <p>Um grupo totalmente democrático e receptivo, onde todos se sentem parte da família Saquavôlei.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-dumbbell"></i>
                     <h3>Treinos Técnicos</h3>
-                    <p>Metodologia de treinamento estruturada para evolução real e consistente do seu jogo.</p>
+                    <p>Metodologia estruturada para evolução real, do aluno inicial ao suporte ao avançado.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-users"></i>
                     <h3>Comunidade Ativa</h3>
-                    <p>Alunos que treinam juntos, crescem juntos. Uma rede de amizade e suporte dentro e fora da areia.</p>
+                    <p>Boas amizades, um grupo movido pelo amor ao esporte 🏐, dentro e fora da areia.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-map-marker-alt"></i>
@@ -311,8 +371,8 @@
                 </div>
                 <div class="card">
                     <i class="fas fa-sun"></i>
-                    <h3>Estrutura na Areia</h3>
-                    <p>Quadras de areia de qualidade, em um cenário paradisíaco que torna cada treino especial.</p>
+                    <h3>Estrutura Completa</h3>
+                    <p>Centro de treinamento de vôlei completo na areia, em um cenário paradisíaco.</p>
                 </div>
             </div>
         </div>
@@ -325,23 +385,32 @@
             <div class="divider"></div>
             <div class="nota-geral">
                 ⭐ 4.8
-                <span>Nota média dos alunos</span>
+                <span>Avaliação no Google Maps</span>
             </div>
             <div class="cards">
                 <div class="card avaliacao">
                     <div class="estrelas">⭐⭐⭐⭐⭐</div>
-                    <p>"Excelente centro de treinamento para todos os níveis! Me sinto evoluindo a cada aula. Recomendo muito!"</p>
-                    <div class="autor">— Carlos M.</div>
+                    <p>"Excelente centro de treinamento para quem busca o vôlei de praia a lazer ou profissional. Tem turmas iniciantes, intermediários e para competições. Recomendo de olhos fechados!"</p>
                 </div>
                 <div class="card avaliacao">
                     <div class="estrelas">⭐⭐⭐⭐⭐</div>
-                    <p>"Ambiente incrível e acolhedor. Nunca imaginei que ia me apaixonar tanto pelo vôlei de praia aqui em Saquarema!"</p>
-                    <div class="autor">— Ana Paula R.</div>
+                    <p>"Melhor centro de treinamento de vôlei aonde fazemos boas amizades, um grupo totalmente democrático e receptivo para os iniciantes do esporte, todos ali movidos pelo amor ao esporte 🏐🏅"</p>
                 </div>
                 <div class="card avaliacao">
                     <div class="estrelas">⭐⭐⭐⭐⭐</div>
-                    <p>"Professores muito competentes e pacientes. Comecei do zero e já estou participando de torneios!"</p>
-                    <div class="autor">— Rafael S.</div>
+                    <p>"Foi show! Professor super competente e comprometido em sempre passar os fundamentos, com as melhores técnicas, desse esporte que amo de paixão."</p>
+                </div>
+                <div class="card avaliacao">
+                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                    <p>"Sensacional, o lugar, as pessoas, os professores. Centro de treinamento de vôlei completo. Com um ótimo profissional!!"</p>
+                </div>
+                <div class="card avaliacao">
+                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                    <p>"Lugar maravilhoso com gente mais Mara ainda!!! Adoro as aulas do prof Pedro 🙌"</p>
+                </div>
+                <div class="card avaliacao">
+                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                    <p>"Lugar muito bom para aprender o vôlei de praia, o professor Pedro manda muito bem! Recomendo a todos que gostam da prática de esporte. Ambiente agradável e familiar."</p>
                 </div>
             </div>
         </div>
@@ -354,12 +423,12 @@
             <div class="divider"></div>
             <p class="section-sub">Momentos de treino, superação e comunidade</p>
             <div class="galeria-grid">
-                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca3350?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="galeria-item" style="background-image: url('images/galeria1.jpg');"></div>
+                <div class="galeria-item" style="background-image: url('images/galeria2.jpg');"></div>
+                <div class="galeria-item" style="background-image: url('images/galeria3.jpg');"></div>
+                <div class="galeria-item" style="background-image: url('images/galeria4.jpg');"></div>
+                <div class="galeria-item" style="background-image: url('images/trofeu.jpg');"></div>
+                <div class="galeria-item" style="background-image: url('images/logo-saquavolei.jpg'); background-size: contain; background-repeat: no-repeat; background-color: #f0f8ff;"></div>
             </div>
         </div>
     </section>
@@ -371,12 +440,12 @@
             <div class="divider"></div>
             <p class="section-sub">Venha nos visitar! Estamos na capital brasileira do vôlei de praia.</p>
             <div class="info-local">
-                <div class="info-item"><i class="fas fa-map-marker-alt"></i> Praia de Itaúna, Saquarema - RJ</div>
-                <div class="info-item"><i class="fas fa-clock"></i> Seg à Sáb: 7h às 20h</div>
-                <div class="info-item"><i class="fab fa-whatsapp"></i> (21) 97467-5220</div>
+                <div class="info-item"><i class="fas fa-map-marker-alt"></i> R. do Oceano, S/N - Itaúna, Saquarema - RJ, 28990-868</div>
+                <div class="info-item"><i class="fas fa-clock"></i> Seg, Qua e Sex: 7h e 17h</div>
+                <div class="info-item"><i class="fab fa-whatsapp"></i> (22) 99201-7662</div>
             </div>
             <iframe id="mapa"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3676.3!2d-42.5093!3d-22.9329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sItaúna%2C+Saquarema+-+RJ!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.5!2d-42.4939!3d-22.9402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x97884b5b5b5b5b5b%3A0x0!2sR.%20do%20Oceano%2C%20S%2FN%20-%20Ita%C3%BAna%2C%20Saquarema%20-%20RJ%2C%2028990-868!5e0!3m2!1spt-BR!2sbr!4v1711584000000"
                 allowfullscreen="" loading="lazy">
             </iframe>
         </div>
@@ -387,7 +456,7 @@
         <div class="container">
             <h2>Venha fazer parte do Saquavôlei!</h2>
             <p>Comece sua jornada no vôlei de praia hoje. Entre em contato e agende sua aula experimental!</p>
-            <a href="https://wa.me/5521974675220?text=Olá!%20Quero%20agendar%20uma%20aula%20no%20Saquavôlei!" target="_blank" class="btn btn-whatsapp">
+            <a href="https://wa.me/5522992017662?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20no%20Saquav%C3%B4lei!" target="_blank" class="btn btn-whatsapp">
                 <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
             <a href="https://www.instagram.com/saquavolei" target="_blank" class="btn btn-instagram">
@@ -401,11 +470,14 @@
         <div class="container">
             <div class="footer-content">
                 <div>
-                    <div class="footer-logo">Saqua<span>vôlei</span></div>
+                    <div class="footer-logo">
+                        <img src="images/logo-saquavolei.jpg" alt="Logo">
+                        <span>Saqua<em>vôlei</em></span>
+                    </div>
                     <p style="color: #aaa; font-size: 0.9rem;">Centro de Treinamento de Vôlei de Praia em Saquarema - RJ</p>
                     <div class="social">
                         <a href="https://www.instagram.com/saquavolei" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/5521974675220" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/5522992017662" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div>
@@ -413,6 +485,7 @@
                     <ul>
                         <li><a href="#sobre">Sobre nós</a></li>
                         <li><a href="#modalidades">Turmas</a></li>
+                        <li><a href="#horarios">Horários</a></li>
                         <li><a href="#diferenciais">Diferenciais</a></li>
                         <li><a href="#localizacao">Localização</a></li>
                     </ul>
@@ -420,33 +493,30 @@
                 <div>
                     <h4>Contato</h4>
                     <ul>
-                        <li><a href="https://wa.me/5521974675220">📱 (21) 97467-5220</a></li>
+                        <li><a href="https://wa.me/5522992017662">📱 (22) 99201-7662</a></li>
                         <li><a href="https://www.instagram.com/saquavolei">📸 @saquavolei</a></li>
-                        <li><a href="#localizacao">📍 Itaúna, Saquarema - RJ</a></li>
+                        <li><a href="#localizacao">📍 R. do Oceano, S/N - Itaúna, Saquarema - RJ</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 Saquavôlei. Todos os direitos reservados.</p>
+                <p>© 2026 Saquavôlei. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
     <!-- WHATSAPP FLUTUANTE -->
-    <a href="https://wa.me/5521974675220?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20Saquavôlei!" target="_blank" class="whatsapp-float" title="Fale conosco no WhatsApp">
+    <a href="https://wa.me/5522992017662?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Saquav%C3%B4lei!" target="_blank" class="whatsapp-float" title="Fale conosco no WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        // Menu mobile
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('active');
         }
         function closeMenu() {
             document.getElementById('navLinks').classList.remove('active');
         }
-
-        // Scroll suave
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -454,18 +524,12 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
-
-        // Animação ao rolar
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-        // Header scroll efeito
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             header.style.boxShadow = window.scrollY > 50 ? '0 2px 20px rgba(0,0,0,0.2)' : 'none';
