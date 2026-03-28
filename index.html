@@ -10,7 +10,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; overflow-x: hidden; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
         :root {
             --azul-mar: #0077BE;
             --areia: #F4A261;
@@ -18,8 +17,6 @@
             --amarelo: #E9C46A;
             --azul-claro: #48CAE4;
         }
-
-        /* HEADER */
         header {
             position: fixed; top: 0; width: 100%;
             background: rgba(0,119,190,0.95);
@@ -36,12 +33,10 @@
         .nav-links a:hover { color: var(--amarelo); }
         .hamburger { display: none; flex-direction: column; cursor: pointer; }
         .hamburger span { width: 25px; height: 3px; background: var(--branco); margin: 3px 0; transition: 0.3s; }
-
-        /* HERO */
         #hero {
             height: 100vh;
             background: linear-gradient(rgba(0,60,120,0.65), rgba(0,60,120,0.45)),
-                url('images/trofeu.jpg') center/cover no-repeat;
+                url('https://i.imgur.com/TEOuUXr.jpg') center/cover no-repeat;
             display: flex; align-items: center; text-align: center; color: var(--branco);
         }
         #hero .hero-content { width: 100%; }
@@ -58,21 +53,15 @@
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(233,196,106,0.5); }
         .btn-secondary { background: transparent; border: 2px solid var(--branco); color: var(--branco); }
         .btn-secondary:hover { background: var(--branco); color: var(--azul-mar); }
-
-        /* SEÇÕES */
         section { padding: 5rem 0; }
         h2 { font-size: 2.4rem; text-align: center; margin-bottom: 0.5rem; color: var(--azul-mar); }
         .section-sub { text-align: center; color: #666; margin-bottom: 3rem; font-size: 1.1rem; }
         .divider { width: 60px; height: 4px; background: var(--amarelo); margin: 0.8rem auto 2rem; border-radius: 2px; }
-
-        /* SOBRE */
         #sobre { background: #f8faff; }
         #sobre .content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
         #sobre img { width: 100%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,119,190,0.2); }
         #sobre .texto p { margin-bottom: 1rem; font-size: 1.05rem; color: #444; }
         .badge { display: inline-block; background: var(--azul-mar); color: var(--branco); padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.85rem; margin: 0.3rem; }
-
-        /* CARDS */
         .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; }
         .card {
             background: var(--branco); border-radius: 20px; padding: 2rem; text-align: center;
@@ -83,11 +72,7 @@
         .card h3 { color: var(--azul-mar); margin-bottom: 0.5rem; font-size: 1.2rem; }
         .card p { color: #666; font-size: 0.95rem; }
         .card-tag { display: inline-block; background: var(--amarelo); color: #333; padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.8rem; margin-bottom: 0.8rem; font-weight: 600; }
-
-        /* MODALIDADES */
         #modalidades { background: linear-gradient(135deg, #f0f8ff, #fff8ee); }
-
-        /* HORÁRIOS */
         #horarios { background: var(--azul-mar); color: var(--branco); }
         #horarios h2 { color: var(--branco); }
         #horarios .divider { background: var(--amarelo); }
@@ -99,18 +84,12 @@
         .horario-card small { font-size: 0.85rem; opacity: 0.8; }
         .turmas-badge { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 2rem; }
         .turmas-badge span { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: var(--branco); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.9rem; }
-
-        /* DIFERENCIAIS */
         #diferenciais { background: var(--branco); }
-
-        /* AVALIACOES */
         #avaliacoes { background: #f8faff; }
         .avaliacao .estrelas { color: var(--amarelo); font-size: 1.4rem; margin-bottom: 0.8rem; }
         .avaliacao .autor { margin-top: 0.8rem; font-weight: 600; color: var(--azul-mar); font-size: 0.9rem; }
         .nota-geral { text-align: center; font-size: 3rem; font-weight: 700; color: var(--azul-mar); margin-bottom: 2rem; }
         .nota-geral span { display: block; font-size: 1rem; color: #666; font-weight: 400; }
-
-        /* GALERIA */
         #galeria { background: var(--areia); }
         .galeria-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
         .galeria-item {
@@ -127,25 +106,16 @@
             transition: background 0.3s;
         }
         .galeria-item:hover::before { background: rgba(0,119,190,0.05); }
-
-        /* LOCALIZACAO */
         #localizacao { background: var(--branco); }
         #mapa { width: 100%; height: 400px; border-radius: 20px; border: none; margin-top: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
         .info-local { display: flex; gap: 2rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
         .info-item { display: flex; align-items: center; gap: 0.8rem; font-size: 1rem; color: #555; }
         .info-item i { color: var(--azul-mar); font-size: 1.3rem; }
-
-        /* CTA */
-        #cta {
-            background: linear-gradient(135deg, var(--azul-mar), var(--azul-claro));
-            color: var(--branco); text-align: center;
-        }
+        #cta { background: linear-gradient(135deg, var(--azul-mar), var(--azul-claro)); color: var(--branco); text-align: center; }
         #cta h2 { color: var(--branco); font-size: 2.8rem; }
         #cta p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
         .btn-whatsapp { background: #25D366; color: var(--branco); }
         .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: var(--branco); }
-
-        /* FOOTER */
         footer { background: #0d1b2a; color: var(--branco); padding: 3rem 0 1.5rem; }
         .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
         .footer-logo { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; }
@@ -161,8 +131,6 @@
         .social { display: flex; gap: 1rem; margin-top: 1rem; }
         .social a { color: #ccc; font-size: 1.5rem; transition: color 0.3s; }
         .social a:hover { color: var(--amarelo); }
-
-        /* WHATSAPP FLUTUANTE */
         .whatsapp-float {
             position: fixed; bottom: 25px; right: 25px;
             background: #25D366; color: var(--branco);
@@ -173,20 +141,13 @@
             animation: pulse 2s infinite;
         }
         .whatsapp-float:hover { transform: scale(1.1); }
-
-        /* ANIMAÇÕES */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes pulse {
             0%, 100% { box-shadow: 0 5px 20px rgba(37,211,102,0.5); }
             50% { box-shadow: 0 5px 35px rgba(37,211,102,0.8); }
         }
         .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             .hamburger { display: flex; }
             .nav-links {
@@ -203,18 +164,15 @@
             .galeria-grid { grid-template-columns: repeat(2, 1fr); }
             #cta h2 { font-size: 2rem; }
         }
-        @media (max-width: 480px) {
-            .galeria-grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 480px) { .galeria-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
     <header>
         <nav class="container">
             <div class="logo-nav">
-                <img src="images/logo-saquavolei.jpg" alt="Logo Saquavôlei">
+                <img src="https://i.imgur.com/fxuSp2z.jpg" alt="Logo Saquavôlei">
                 <span>Saqua<em>vôlei</em></span>
             </div>
             <ul class="nav-links" id="navLinks">
@@ -231,10 +189,9 @@
         </nav>
     </header>
 
-    <!-- HERO -->
     <section id="hero">
         <div class="container hero-content">
-            <img src="images/logo-saquavolei.jpg" alt="Logo Saquavôlei" class="hero-logo">
+            <img src="https://i.imgur.com/fxuSp2z.jpg" alt="Logo Saquavôlei" class="hero-logo">
             <h1>Treine vôlei de praia em Saquarema com quem entende do jogo</h1>
             <p>Do iniciante ao competitivo, venha evoluir no Saquavôlei</p>
             <a href="https://wa.me/5522992017662?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20no%20Saquav%C3%B4lei!" target="_blank" class="btn">🏐 Agendar Aula</a>
@@ -242,7 +199,6 @@
         </div>
     </section>
 
-    <!-- SOBRE -->
     <section id="sobre" class="fade-in">
         <div class="container">
             <h2>Sobre o Saquavôlei</h2>
@@ -260,12 +216,11 @@
                         <span class="badge">🏐 Todos os Níveis</span>
                     </div>
                 </div>
-                <img src="images/galeria4.jpg" alt="Turma do Saquavôlei na praia">
+                <img src="https://i.imgur.com/5lpUQYp.jpg" alt="Turma do Saquavôlei na praia">
             </div>
         </div>
     </section>
 
-    <!-- MODALIDADES -->
     <section id="modalidades" class="fade-in">
         <div class="container">
             <h2>Nossas Turmas</h2>
@@ -306,7 +261,6 @@
         </div>
     </section>
 
-    <!-- HORÁRIOS -->
     <section id="horarios" class="fade-in">
         <div class="container">
             <h2>Horários de Treino</h2>
@@ -338,7 +292,6 @@
         </div>
     </section>
 
-    <!-- DIFERENCIAIS -->
     <section id="diferenciais" class="fade-in">
         <div class="container">
             <h2>Por que escolher o Saquavôlei?</h2>
@@ -378,7 +331,6 @@
         </div>
     </section>
 
-    <!-- AVALIAÇÕES -->
     <section id="avaliacoes" class="fade-in">
         <div class="container">
             <h2>O que dizem nossos alunos</h2>
@@ -416,24 +368,22 @@
         </div>
     </section>
 
-    <!-- GALERIA -->
     <section id="galeria" class="fade-in">
         <div class="container">
             <h2>Galeria</h2>
             <div class="divider"></div>
             <p class="section-sub">Momentos de treino, superação e comunidade</p>
             <div class="galeria-grid">
-                <div class="galeria-item" style="background-image: url('images/galeria1.jpg');"></div>
-                <div class="galeria-item" style="background-image: url('images/galeria2.jpg');"></div>
-                <div class="galeria-item" style="background-image: url('images/galeria3.jpg');"></div>
-                <div class="galeria-item" style="background-image: url('images/galeria4.jpg');"></div>
-                <div class="galeria-item" style="background-image: url('images/trofeu.jpg');"></div>
-                <div class="galeria-item" style="background-image: url('images/logo-saquavolei.jpg'); background-size: contain; background-repeat: no-repeat; background-color: #f0f8ff;"></div>
+                <div class="galeria-item" style="background-image: url('https://i.imgur.com/mdXHm1x.jpg');"></div>
+                <div class="galeria-item" style="background-image: url('https://i.imgur.com/ILGOLUt.jpg');"></div>
+                <div class="galeria-item" style="background-image: url('https://i.imgur.com/TEOuUXr.jpg');"></div>
+                <div class="galeria-item" style="background-image: url('https://i.imgur.com/5lpUQYp.jpg');"></div>
+                <div class="galeria-item" style="background-image: url('https://i.imgur.com/xmWBk3t.jpg');"></div>
+                <div class="galeria-item" style="background-image: url('https://i.imgur.com/fxuSp2z.jpg'); background-size: contain; background-repeat: no-repeat; background-color: #f0f8ff;"></div>
             </div>
         </div>
     </section>
 
-    <!-- LOCALIZAÇÃO -->
     <section id="localizacao" class="fade-in">
         <div class="container">
             <h2>Onde estamos</h2>
@@ -451,7 +401,6 @@
         </div>
     </section>
 
-    <!-- CTA FINAL -->
     <section id="cta" class="fade-in">
         <div class="container">
             <h2>Venha fazer parte do Saquavôlei!</h2>
@@ -465,13 +414,12 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div>
                     <div class="footer-logo">
-                        <img src="images/logo-saquavolei.jpg" alt="Logo">
+                        <img src="https://i.imgur.com/fxuSp2z.jpg" alt="Logo Saquavôlei">
                         <span>Saqua<em>vôlei</em></span>
                     </div>
                     <p style="color: #aaa; font-size: 0.9rem;">Centro de Treinamento de Vôlei de Praia em Saquarema - RJ</p>
@@ -505,18 +453,13 @@
         </div>
     </footer>
 
-    <!-- WHATSAPP FLUTUANTE -->
     <a href="https://wa.me/5522992017662?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Saquav%C3%B4lei!" target="_blank" class="whatsapp-float" title="Fale conosco no WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-        function closeMenu() {
-            document.getElementById('navLinks').classList.remove('active');
-        }
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+        function closeMenu() { document.getElementById('navLinks').classList.remove('active'); }
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -525,9 +468,7 @@
             });
         });
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         window.addEventListener('scroll', () => {
