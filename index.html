@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saquavôlei - Centro de Treinamento de Vôlei de Praia em Saquarema-RJ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        :root {
+            --azul-mar: #0077BE;
+            --areia: #F4A261;
+            --branco: #FFF;
+            --amarelo: #E9C46A;
+            --azul-claro: #48CAE4;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(0,119,190,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000; transition: all 0.3s;
+        }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { font-size: 1.8rem; font-weight: 700; color: var(--branco); letter-spacing: 1px; }
+        .logo span { color: var(--amarelo); }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: var(--branco); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--amarelo); }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; }
+        .hamburger span { width: 25px; height: 3px; background: var(--branco); margin: 3px 0; transition: 0.3s; }
+
+        /* HERO */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,80,140,0.72), rgba(244,162,97,0.45)),
+                url('https://images.unsplash.com/photo-1558618047-3c8c76ca3350?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            display: flex; align-items: center; text-align: center; color: var(--branco);
+        }
+        #hero .hero-content { width: 100%; }
+        #hero h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 1rem; animation: fadeInUp 1s ease; line-height: 1.2; }
+        #hero p { font-size: 1.4rem; margin-bottom: 2rem; animation: fadeInUp 1s ease 0.2s both; opacity: 0.95; }
+        .btn {
+            display: inline-block; padding: 1rem 2.2rem;
+            background: var(--amarelo); color: var(--azul-mar);
+            font-weight: 700; font-size: 1rem; text-decoration: none;
+            border-radius: 50px; transition: transform 0.3s, box-shadow 0.3s;
+            margin: 0.5rem;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(233,196,106,0.5); }
+        .btn-secondary { background: transparent; border: 2px solid var(--branco); color: var(--branco); }
+        .btn-secondary:hover { background: var(--branco); color: var(--azul-mar); }
+
+        /* SEÇÕES */
+        section { padding: 5rem 0; }
+        h2 { font-size: 2.4rem; text-align: center; margin-bottom: 0.5rem; color: var(--azul-mar); }
+        .section-sub { text-align: center; color: #666; margin-bottom: 3rem; font-size: 1.1rem; }
+        .divider { width: 60px; height: 4px; background: var(--amarelo); margin: 0.8rem auto 2rem; border-radius: 2px; }
+
+        /* SOBRE */
+        #sobre { background: #f8faff; }
+        #sobre .content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        #sobre img { width: 100%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,119,190,0.2); }
+        #sobre .texto p { margin-bottom: 1rem; font-size: 1.05rem; color: #444; }
+        .badge { display: inline-block; background: var(--azul-mar); color: var(--branco); padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.85rem; margin: 0.3rem; }
+
+        /* CARDS */
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; }
+        .card {
+            background: var(--branco); border-radius: 20px; padding: 2rem; text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,119,190,0.15); }
+        .card i { font-size: 3rem; color: var(--azul-mar); margin-bottom: 1rem; }
+        .card h3 { color: var(--azul-mar); margin-bottom: 0.5rem; font-size: 1.2rem; }
+        .card p { color: #666; font-size: 0.95rem; }
+        .card-tag { display: inline-block; background: var(--amarelo); color: #333; padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.8rem; margin-bottom: 0.8rem; font-weight: 600; }
+
+        /* MODALIDADES */
+        #modalidades { background: linear-gradient(135deg, #f0f8ff, #fff8ee); }
+
+        /* DIFERENCIAIS */
+        #diferenciais { background: var(--branco); }
+
+        /* AVALIACOES */
+        #avaliacoes { background: #f8faff; }
+        .avaliacao .estrelas { color: var(--amarelo); font-size: 1.4rem; margin-bottom: 0.8rem; }
+        .avaliacao .autor { margin-top: 0.8rem; font-weight: 600; color: var(--azul-mar); font-size: 0.9rem; }
+        .nota-geral { text-align: center; font-size: 3rem; font-weight: 700; color: var(--azul-mar); margin-bottom: 2rem; }
+        .nota-geral span { display: block; font-size: 1rem; color: #666; font-weight: 400; }
+
+        /* GALERIA */
+        #galeria { background: var(--areia); }
+        .galeria-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .galeria-item {
+            height: 220px;
+            background-size: cover; background-position: center;
+            border-radius: 15px;
+            position: relative; overflow: hidden;
+            cursor: pointer; transition: transform 0.3s;
+        }
+        .galeria-item:hover { transform: scale(1.03); }
+        .galeria-item::before {
+            content: ''; position: absolute; inset: 0;
+            background: rgba(0,119,190,0.3); border-radius: 15px;
+            transition: background 0.3s;
+        }
+        .galeria-item:hover::before { background: rgba(0,119,190,0.1); }
+
+        /* LOCALIZACAO */
+        #localizacao { background: var(--branco); }
+        #mapa { width: 100%; height: 400px; border-radius: 20px; border: none; margin-top: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .info-local { display: flex; gap: 2rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
+        .info-item { display: flex; align-items: center; gap: 0.8rem; font-size: 1rem; color: #555; }
+        .info-item i { color: var(--azul-mar); font-size: 1.3rem; }
+
+        /* CTA */
+        #cta {
+            background: linear-gradient(135deg, var(--azul-mar), var(--azul-claro));
+            color: var(--branco); text-align: center;
+        }
+        #cta h2 { color: var(--branco); font-size: 2.8rem; }
+        #cta p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
+        .btn-whatsapp { background: #25D366; color: var(--branco); }
+        .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: var(--branco); }
+
+        /* FOOTER */
+        footer { background: #0d1b2a; color: var(--branco); padding: 3rem 0 1.5rem; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer-logo { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .footer-logo span { color: var(--amarelo); }
+        footer h4 { color: var(--amarelo); margin-bottom: 1rem; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 0.5rem; }
+        footer ul a { color: #ccc; text-decoration: none; transition: color 0.3s; font-size: 0.95rem; }
+        footer ul a:hover { color: var(--amarelo); }
+        .footer-bottom { border-top: 1px solid #2a3a4a; padding-top: 1.5rem; text-align: center; color: #888; font-size: 0.9rem; }
+        .social { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social a { color: #ccc; font-size: 1.5rem; transition: color 0.3s; }
+        .social a:hover { color: var(--amarelo); }
+
+        /* WHATSAPP FLUTUANTE */
+        .whatsapp-float {
+            position: fixed; bottom: 25px; right: 25px;
+            background: #25D366; color: var(--branco);
+            width: 65px; height: 65px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; box-shadow: 0 5px 20px rgba(37,211,102,0.5);
+            transition: transform 0.3s; z-index: 1000; text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* ANIMAÇÕES */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 5px 20px rgba(37,211,102,0.5); }
+            50% { box-shadow: 0 5px 35px rgba(37,211,102,0.8); }
+        }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links {
+                position: fixed; top: 70px; left: -100%; width: 100%;
+                height: calc(100vh - 70px); background: var(--azul-mar);
+                flex-direction: column; justify-content: start; align-items: center;
+                padding-top: 2rem; transition: left 0.3s; gap: 1.5rem;
+            }
+            .nav-links.active { left: 0; }
+            #hero h1 { font-size: 2.2rem; }
+            #hero p { font-size: 1.1rem; }
+            #sobre .content { grid-template-columns: 1fr; }
+            h2 { font-size: 2rem; }
+            .galeria-grid { grid-template-columns: repeat(2, 1fr); }
+            #cta h2 { font-size: 2rem; }
+        }
+        @media (max-width: 480px) {
+            .galeria-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav class="container">
+            <div class="logo">Saqua<span>vôlei</span></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" onclick="closeMenu()">Início</a></li>
+                <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
+                <li><a href="#modalidades" onclick="closeMenu()">Turmas</a></li>
+                <li><a href="#diferenciais" onclick="closeMenu()">Diferenciais</a></li>
+                <li><a href="#avaliacoes" onclick="closeMenu()">Avaliações</a></li>
+                <li><a href="#localizacao" onclick="closeMenu()">Localização</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="container hero-content">
+            <h1>Treine vôlei de praia em Saquarema com quem entende do jogo</h1>
+            <p>Do iniciante ao competitivo, venha evoluir no Saquavôlei</p>
+            <a href="https://wa.me/5521974675220" target="_blank" class="btn">🏐 Agendar Aula</a>
+            <a href="https://wa.me/5521974675220" target="_blank" class="btn btn-secondary">💬 Fale Conosco</a>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="fade-in">
+        <div class="container">
+            <h2>Sobre o Saquavôlei</h2>
+            <div class="divider"></div>
+            <p class="section-sub">Conheça quem está por trás do seu desenvolvimento no vôlei de praia</p>
+            <div class="content">
+                <div class="texto">
+                    <p>O <strong>Saquavôlei</strong> é o centro de treinamento especializado em vôlei de praia em Saquarema-RJ, localizado na famosa praia de <strong>Itaúna</strong>, referência nacional no esporte.</p>
+                    <p>Aqui você encontra um ambiente <strong>acolhedor e profissional</strong>, com professores qualificados que entendem de cada fase da sua evolução — do primeiro toque ao pódio.</p>
+                    <p>Nossa missão é unir <strong>técnica, diversão e comunidade</strong> em um espaço onde cada aluno se sente em casa.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <span class="badge">🏆 Professores Qualificados</span>
+                        <span class="badge">🌊 Praia de Itaúna</span>
+                        <span class="badge">👥 Comunidade Forte</span>
+                        <span class="badge">🏐 Todos os Níveis</span>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Treino de vôlei de praia no Saquavôlei">
+            </div>
+        </div>
+    </section>
+
+    <!-- MODALIDADES -->
+    <section id="modalidades" class="fade-in">
+        <div class="container">
+            <h2>Nossas Turmas</h2>
+            <div class="divider"></div>
+            <p class="section-sub">Encontre a turma ideal para o seu nível</p>
+            <div class="cards">
+                <div class="card">
+                    <i class="fas fa-seedling"></i>
+                    <div class="card-tag">Para quem está começando</div>
+                    <h3>Iniciante</h3>
+                    <p>Aprenda os fundamentos do vôlei de praia em um ambiente descontraído e motivador. Sem pré-requisitos.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-running"></i>
+                    <div class="card-tag">Para quem já tem base</div>
+                    <h3>Intermediário</h3>
+                    <p>Aprimore passes, saques, ataques e bloqueios com treinos dinâmicos e táticos.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-bolt"></i>
+                    <div class="card-tag">Para quem quer evoluir</div>
+                    <h3>Avançado</h3>
+                    <p>Treinos técnicos e táticos intensos para elevar seu jogo a outro nível.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-trophy"></i>
+                    <div class="card-tag">Para competidores</div>
+                    <h3>Competitivo</h3>
+                    <p>Preparação focada para torneios e circuitos. Periodização e estratégia de alto rendimento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section id="diferenciais" class="fade-in">
+        <div class="container">
+            <h2>Por que escolher o Saquavôlei?</h2>
+            <div class="divider"></div>
+            <div class="cards">
+                <div class="card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Professores Qualificados</h3>
+                    <p>Profissionais experientes no vôlei de praia, com metodologia eficiente para todos os níveis.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Ambiente Acolhedor</h3>
+                    <p>Um espaço onde alunos de todas as idades e níveis se sentem bem-vindos e parte de uma família.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Treinos Técnicos</h3>
+                    <p>Metodologia de treinamento estruturada para evolução real e consistente do seu jogo.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3>Comunidade Ativa</h3>
+                    <p>Alunos que treinam juntos, crescem juntos. Uma rede de amizade e suporte dentro e fora da areia.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Localização Privilegiada</h3>
+                    <p>Na praia de Itaúna, em Saquarema-RJ — capital brasileira do vôlei de praia.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-sun"></i>
+                    <h3>Estrutura na Areia</h3>
+                    <p>Quadras de areia de qualidade, em um cenário paradisíaco que torna cada treino especial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AVALIAÇÕES -->
+    <section id="avaliacoes" class="fade-in">
+        <div class="container">
+            <h2>O que dizem nossos alunos</h2>
+            <div class="divider"></div>
+            <div class="nota-geral">
+                ⭐ 4.8
+                <span>Nota média dos alunos</span>
+            </div>
+            <div class="cards">
+                <div class="card avaliacao">
+                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                    <p>"Excelente centro de treinamento para todos os níveis! Me sinto evoluindo a cada aula. Recomendo muito!"</p>
+                    <div class="autor">— Carlos M.</div>
+                </div>
+                <div class="card avaliacao">
+                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                    <p>"Ambiente incrível e acolhedor. Nunca imaginei que ia me apaixonar tanto pelo vôlei de praia aqui em Saquarema!"</p>
+                    <div class="autor">— Ana Paula R.</div>
+                </div>
+                <div class="card avaliacao">
+                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                    <p>"Professores muito competentes e pacientes. Comecei do zero e já estou participando de torneios!"</p>
+                    <div class="autor">— Rafael S.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria" class="fade-in">
+        <div class="container">
+            <h2>Galeria</h2>
+            <div class="divider"></div>
+            <p class="section-sub">Momentos de treino, superação e comunidade</p>
+            <div class="galeria-grid">
+                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca3350?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section id="localizacao" class="fade-in">
+        <div class="container">
+            <h2>Onde estamos</h2>
+            <div class="divider"></div>
+            <p class="section-sub">Venha nos visitar! Estamos na capital brasileira do vôlei de praia.</p>
+            <div class="info-local">
+                <div class="info-item"><i class="fas fa-map-marker-alt"></i> Praia de Itaúna, Saquarema - RJ</div>
+                <div class="info-item"><i class="fas fa-clock"></i> Seg à Sáb: 7h às 20h</div>
+                <div class="info-item"><i class="fab fa-whatsapp"></i> (21) 97467-5220</div>
+            </div>
+            <iframe id="mapa"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3676.3!2d-42.5093!3d-22.9329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sItaúna%2C+Saquarema+-+RJ!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="cta" class="fade-in">
+        <div class="container">
+            <h2>Venha fazer parte do Saquavôlei!</h2>
+            <p>Comece sua jornada no vôlei de praia hoje. Entre em contato e agende sua aula experimental!</p>
+            <a href="https://wa.me/5521974675220?text=Olá!%20Quero%20agendar%20uma%20aula%20no%20Saquavôlei!" target="_blank" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.instagram.com/saquavolei" target="_blank" class="btn btn-instagram">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Saqua<span>vôlei</span></div>
+                    <p style="color: #aaa; font-size: 0.9rem;">Centro de Treinamento de Vôlei de Praia em Saquarema - RJ</p>
+                    <div class="social">
+                        <a href="https://www.instagram.com/saquavolei" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5521974675220" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre nós</a></li>
+                        <li><a href="#modalidades">Turmas</a></li>
+                        <li><a href="#diferenciais">Diferenciais</a></li>
+                        <li><a href="#localizacao">Localização</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="https://wa.me/5521974675220">📱 (21) 97467-5220</a></li>
+                        <li><a href="https://www.instagram.com/saquavolei">📸 @saquavolei</a></li>
+                        <li><a href="#localizacao">📍 Itaúna, Saquarema - RJ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Saquavôlei. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/5521974675220?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20Saquavôlei!" target="_blank" class="whatsapp-float" title="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Menu mobile
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        function closeMenu() {
+            document.getElementById('navLinks').classList.remove('active');
+        }
+
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Animação ao rolar
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Header scroll efeito
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.style.boxShadow = window.scrollY > 50 ? '0 2px 20px rgba(0,0,0,0.2)' : 'none';
+        });
+    </script>
+</body>
+</html>
