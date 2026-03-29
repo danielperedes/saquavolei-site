@@ -50,7 +50,7 @@
         "latitude": -22.9402,
         "longitude": -42.4939
       },
-      "openingHours": ["Mo,We,Fr 07:00-09:00", "Mo,We,Fr 17:00-19:00"],
+      "openingHours": ["Mo,We,Fr 07:00-09:00", "Mo,We,Fr 15:30-17:00", "Mo,We,Fr 16:00-17:00", "Mo,We,Fr 17:00-19:00"],
       "sameAs": ["https://www.instagram.com/saquavolei"]
     }
     </script>
@@ -134,17 +134,91 @@
         .card p { color: #666; font-size: 0.95rem; }
         .card-tag { display: inline-block; background: var(--amarelo); color: #333; padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.8rem; margin-bottom: 0.8rem; font-weight: 600; }
         #modalidades { background: linear-gradient(135deg, #f0f8ff, #fff8ee); }
+
+        /* ===== HORÁRIOS — novo layout ===== */
         #horarios { background: var(--azul-mar); color: var(--branco); }
         #horarios h2 { color: var(--branco); }
         #horarios .divider { background: var(--amarelo); }
-        #horarios .section-sub { color: rgba(255,255,255,0.8); }
-        .horario-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
-        .horario-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); border-radius: 16px; padding: 1.8rem; text-align: center; backdrop-filter: blur(5px); }
-        .horario-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--amarelo); }
-        .horario-card p { font-size: 1.5rem; font-weight: 700; }
-        .horario-card small { font-size: 0.85rem; opacity: 0.8; }
-        .turmas-badge { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 2rem; }
-        .turmas-badge span { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: var(--branco); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.9rem; }
+        #horarios .section-sub { color: rgba(255,255,255,0.85); margin-bottom: 2.5rem; }
+
+        /* Aviso de dias */
+        .horarios-dias {
+            display: flex; justify-content: center; gap: 1rem;
+            flex-wrap: wrap; margin-bottom: 2.5rem;
+        }
+        .dia-pill {
+            background: rgba(255,255,255,0.15);
+            border: 1.5px solid rgba(255,255,255,0.4);
+            color: var(--branco); padding: 0.5rem 1.4rem;
+            border-radius: 50px; font-weight: 600; font-size: 1rem;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Grade de horários */
+        .horario-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .horario-row {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            align-items: stretch;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: background 0.3s;
+        }
+        .horario-row:hover { background: rgba(255,255,255,0.14); }
+        .horario-hora {
+            background: rgba(0,0,0,0.18);
+            display: flex; align-items: center; justify-content: center;
+            flex-direction: column;
+            padding: 1.2rem 0.8rem;
+            border-right: 1px solid rgba(255,255,255,0.15);
+        }
+        .horario-hora strong {
+            font-size: 1.6rem; font-weight: 700; color: var(--amarelo);
+            line-height: 1;
+        }
+        .horario-hora span {
+            font-size: 0.7rem; opacity: 0.7; margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .horario-info {
+            padding: 1.2rem 1.5rem;
+            display: flex; flex-direction: column; justify-content: center; gap: 0.3rem;
+        }
+        .horario-turma {
+            font-size: 1.05rem; font-weight: 600; color: var(--branco);
+        }
+        .horario-tags {
+            display: flex; flex-wrap: wrap; gap: 0.4rem;
+        }
+        .htag {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.9);
+            padding: 0.2rem 0.7rem;
+            border-radius: 50px; font-size: 0.78rem;
+        }
+        .htag.destaque {
+            background: var(--amarelo);
+            border-color: var(--amarelo);
+            color: #333; font-weight: 600;
+        }
+
+        .horarios-nota {
+            text-align: center; margin-top: 2.5rem;
+            color: rgba(255,255,255,0.7); font-size: 0.9rem;
+        }
+        .horarios-nota a {
+            color: var(--amarelo); font-weight: 600; text-decoration: none;
+        }
+        .horarios-nota a:hover { text-decoration: underline; }
+
         #diferenciais { background: var(--branco); }
         #avaliacoes { background: #f8faff; }
         .avaliacao .estrelas { color: var(--amarelo); font-size: 1.4rem; margin-bottom: 0.8rem; }
@@ -319,10 +393,14 @@
             .galeria-grid { grid-template-columns: repeat(2, 1fr); }
             #cta h2 { font-size: 2rem; }
             .insta-grid { grid-template-columns: repeat(3, 1fr); }
+            .horario-row { grid-template-columns: 90px 1fr; }
+            .horario-hora strong { font-size: 1.3rem; }
+            .horario-turma { font-size: 0.95rem; }
         }
         @media (max-width: 480px) {
             .galeria-grid { grid-template-columns: 1fr; }
             .insta-grid { grid-template-columns: repeat(2, 1fr); }
+            .horario-row { grid-template-columns: 80px 1fr; }
         }
     </style>
 </head>
@@ -417,38 +495,110 @@
                     <h3>Turma Infantil</h3>
                     <p>Turma especialmente pensada para crianças, com atividades lúdicas e pedagógicas na areia.</p>
                 </div>
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <div class="card-tag">Para jovens</div>
+                    <h3>Adolescentes</h3>
+                    <p>Turma exclusiva para adolescentes, com metodologia adaptada ao desenvolvimento e energia dessa fase.</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- HORÁRIOS — layout redesenhado -->
     <section id="horarios" class="fade-in">
         <div class="container">
             <h2>Horários de Treino</h2>
             <div class="divider"></div>
-            <p class="section-sub">Treinos às segundas, quartas e sextas-feiras</p>
-            <div class="horario-grid">
-                <div class="horario-card">
-                    <h3>☀️ Segunda-feira</h3>
-                    <p>7h e 17h</p>
-                    <small>Todos os níveis</small>
-                </div>
-                <div class="horario-card">
-                    <h3>⚡ Quarta-feira</h3>
-                    <p>7h e 17h</p>
-                    <small>Todos os níveis</small>
-                </div>
-                <div class="horario-card">
-                    <h3>🏆 Sexta-feira</h3>
-                    <p>7h e 17h</p>
-                    <small>Todos os níveis</small>
-                </div>
+            <p class="section-sub">As aulas acontecem toda semana nos mesmos dias e horários</p>
+
+            <!-- Dias da semana -->
+            <div class="horarios-dias">
+                <div class="dia-pill">📅 Segunda-feira</div>
+                <div class="dia-pill">📅 Quarta-feira</div>
+                <div class="dia-pill">📅 Sexta-feira</div>
             </div>
-            <div class="turmas-badge">
-                <span>🌱 Iniciante</span>
-                <span>⚡ Intermediário</span>
-                <span>🔥 Avançado</span>
-                <span>👦 Infantil</span>
+
+            <!-- Grade de horários -->
+            <div class="horario-cards">
+
+                <div class="horario-row">
+                    <div class="horario-hora">
+                        <strong>7h</strong>
+                        <span>manhã</span>
+                    </div>
+                    <div class="horario-info">
+                        <div class="horario-turma">🏐 Adultos</div>
+                        <div class="horario-tags">
+                            <span class="htag destaque">Iniciante</span>
+                            <span class="htag destaque">Intermediário</span>
+                            <span class="htag destaque">Avançado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="horario-row">
+                    <div class="horario-hora">
+                        <strong>8h</strong>
+                        <span>manhã</span>
+                    </div>
+                    <div class="horario-info">
+                        <div class="horario-turma">🏆 Infantil &amp; Competição</div>
+                        <div class="horario-tags">
+                            <span class="htag">Turma Infantil</span>
+                            <span class="htag">Competição</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="horario-row">
+                    <div class="horario-hora">
+                        <strong>15h30</strong>
+                        <span>tarde</span>
+                    </div>
+                    <div class="horario-info">
+                        <div class="horario-turma">🥇 Turma de Competição</div>
+                        <div class="horario-tags">
+                            <span class="htag">Alto rendimento</span>
+                            <span class="htag">Torneios &amp; Circuitos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="horario-row">
+                    <div class="horario-hora">
+                        <strong>16h</strong>
+                        <span>tarde</span>
+                    </div>
+                    <div class="horario-info">
+                        <div class="horario-turma">🧑 Turma de Adolescentes</div>
+                        <div class="horario-tags">
+                            <span class="htag">Metodologia exclusiva</span>
+                            <span class="htag">Jovens</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="horario-row">
+                    <div class="horario-hora">
+                        <strong>17h</strong>
+                        <span>tarde</span>
+                    </div>
+                    <div class="horario-info">
+                        <div class="horario-turma">🌅 Infantil &amp; Adultos</div>
+                        <div class="horario-tags">
+                            <span class="htag">Turma Infantil</span>
+                            <span class="htag">Adultos</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+            <p class="horarios-nota">
+                ❓ Dúvidas sobre qual turma é ideal para você?
+                <a href="https://wa.me/5522992017662?text=Ol%C3%A1!%20Quero%20saber%20qual%20turma%20%C3%A9%20ideal%20para%20mim!" target="_blank">Fale com a gente no WhatsApp →</a>
+            </p>
         </div>
     </section>
 
@@ -636,7 +786,7 @@
             <p class="section-sub">Venha nos visitar! Estamos na capital brasileira do vôlei de praia.</p>
             <div class="info-local">
                 <div class="info-item"><i class="fas fa-map-marker-alt"></i> R. do Oceano, S/N - Itaúna, Saquarema - RJ, 28990-868</div>
-                <div class="info-item"><i class="fas fa-clock"></i> Seg, Qua e Sex: 7h e 17h</div>
+                <div class="info-item"><i class="fas fa-clock"></i> Seg, Qua e Sex: 7h, 8h, 15h30, 16h e 17h</div>
                 <div class="info-item"><i class="fab fa-whatsapp"></i> (22) 99201-7662</div>
             </div>
             <iframe id="mapa"
@@ -681,6 +831,16 @@
                         <li><a href="#horarios">Horários</a></li>
                         <li><a href="#faq">FAQ</a></li>
                         <li><a href="#localizacao">Localização</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Horários</h4>
+                    <ul>
+                        <li><a href="#horarios">⏰ 7h — Adultos (todos os níveis)</a></li>
+                        <li><a href="#horarios">⏰ 8h — Infantil &amp; Competição</a></li>
+                        <li><a href="#horarios">⏰ 15h30 — Competição</a></li>
+                        <li><a href="#horarios">⏰ 16h — Adolescentes</a></li>
+                        <li><a href="#horarios">⏰ 17h — Infantil &amp; Adultos</a></li>
                     </ul>
                 </div>
                 <div>
