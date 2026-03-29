@@ -4,6 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saquavôlei - Centro de Treinamento de Vôlei de Praia em Saquarema-RJ</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Saquavôlei é o centro de treinamento de vôlei de praia em Saquarema-RJ, na praia de Itaúna. Turmas para todos os níveis: iniciante, intermediário, avançado e competitivo. Primeira aula experimental gratuita!">
+    <meta name="keywords" content="vôlei de praia, Saquarema, Itaúna, treinamento, aulas vôlei, Saquavôlei, vôlei RJ">
+    <meta name="author" content="Saquavôlei">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://saquavolei.com.br/">
+
+    <!-- Open Graph (WhatsApp, Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saquavolei.com.br/">
+    <meta property="og:title" content="Saquavôlei - Vôlei de Praia em Saquarema-RJ">
+    <meta property="og:description" content="Treine vôlei de praia na praia de Itaúna com professores qualificados. Turmas para todos os níveis. Primeira aula por nossa conta!">
+    <meta property="og:image" content="https://i.imgur.com/1rFOY7j.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Saquavôlei">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Saquavôlei - Vôlei de Praia em Saquarema-RJ">
+    <meta name="twitter:description" content="Treine vôlei de praia na praia de Itaúna. Primeira aula gratuita!">
+    <meta name="twitter:image" content="https://i.imgur.com/1rFOY7j.jpg">
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "Saquavôlei",
+      "description": "Centro de treinamento de vôlei de praia em Saquarema-RJ, na praia de Itaúna.",
+      "url": "https://saquavolei.com.br",
+      "telephone": "+55-22-99201-7662",
+      "image": "https://i.imgur.com/1rFOY7j.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. do Oceano, S/N",
+        "addressLocality": "Saquarema",
+        "addressRegion": "RJ",
+        "postalCode": "28990-868",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -22.9402,
+        "longitude": -42.4939
+      },
+      "openingHours": ["Mo,We,Fr 07:00-09:00", "Mo,We,Fr 17:00-19:00"],
+      "sameAs": ["https://www.instagram.com/saquavolei"]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <!-- ATENÇÃO: Substitua G-XXXXXXXXXX pelo seu ID real do Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -106,6 +167,100 @@
             transition: background 0.3s;
         }
         .galeria-item:hover::before { background: rgba(0,119,190,0.05); }
+
+        /* ===== FAQ ===== */
+        #faq { background: #f8faff; }
+        .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+        .faq-item {
+            background: var(--branco);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+        .faq-item:hover { box-shadow: 0 8px 30px rgba(0,119,190,0.12); }
+        .faq-question {
+            width: 100%; display: flex; justify-content: space-between; align-items: center;
+            padding: 1.4rem 1.8rem; background: none; border: none;
+            font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 600;
+            color: var(--azul-mar); cursor: pointer; text-align: left; gap: 1rem;
+            transition: color 0.3s;
+        }
+        .faq-question:hover { color: #005a8e; }
+        .faq-icon {
+            flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+            background: var(--amarelo); display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; font-weight: 700; color: #333;
+            transition: transform 0.35s ease, background 0.3s;
+        }
+        .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--azul-mar); color: var(--branco); }
+        .faq-answer {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 1.8rem;
+        }
+        .faq-item.open .faq-answer { max-height: 200px; padding: 0 1.8rem 1.4rem; }
+        .faq-answer p { color: #555; font-size: 0.98rem; line-height: 1.7; }
+
+        /* ===== INSTAGRAM PREVIEW ===== */
+        #instagram { background: var(--branco); }
+        .insta-header {
+            display: flex; align-items: center; justify-content: center;
+            gap: 1rem; margin-bottom: 1rem;
+        }
+        .insta-header-icon {
+            width: 52px; height: 52px; border-radius: 50%;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 1.5rem;
+        }
+        .insta-handle { font-size: 1.3rem; font-weight: 700; color: #333; }
+        .insta-handle span { color: var(--azul-mar); }
+        .insta-bio { text-align: center; color: #666; font-size: 0.95rem; margin-bottom: 2.5rem; }
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.6rem;
+            max-width: 680px;
+            margin: 0 auto 2.5rem;
+        }
+        .insta-post {
+            aspect-ratio: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        .insta-post img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .insta-post:hover img { transform: scale(1.07); }
+        .insta-post-overlay {
+            position: absolute; inset: 0;
+            background: rgba(0,119,190,0);
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.3s;
+        }
+        .insta-post:hover .insta-post-overlay {
+            background: rgba(0,119,190,0.45);
+        }
+        .insta-post-overlay i {
+            color: #fff; font-size: 1.8rem;
+            opacity: 0; transform: scale(0.7);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .insta-post:hover .insta-post-overlay i { opacity: 1; transform: scale(1); }
+        .insta-cta { text-align: center; }
+        .btn-instagram-solid {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: #fff; padding: 0.9rem 2rem; border-radius: 50px;
+            font-weight: 700; font-size: 1rem; text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn-instagram-solid:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(220,39,67,0.35); }
+
         #localizacao { background: var(--branco); }
         #mapa { width: 100%; height: 400px; border-radius: 20px; border: none; margin-top: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
         .info-local { display: flex; gap: 2rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
@@ -163,8 +318,12 @@
             h2 { font-size: 2rem; }
             .galeria-grid { grid-template-columns: repeat(2, 1fr); }
             #cta h2 { font-size: 2rem; }
+            .insta-grid { grid-template-columns: repeat(3, 1fr); }
         }
-        @media (max-width: 480px) { .galeria-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 480px) {
+            .galeria-grid { grid-template-columns: 1fr; }
+            .insta-grid { grid-template-columns: repeat(2, 1fr); }
+        }
     </style>
 </head>
 <body>
@@ -181,6 +340,7 @@
                 <li><a href="#modalidades" onclick="closeMenu()">Turmas</a></li>
                 <li><a href="#horarios" onclick="closeMenu()">Horários</a></li>
                 <li><a href="#avaliacoes" onclick="closeMenu()">Avaliações</a></li>
+                <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
                 <li><a href="#localizacao" onclick="closeMenu()">Localização</a></li>
             </ul>
             <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -251,6 +411,12 @@
                     <h3>Competitivo</h3>
                     <p>Preparação focada para torneios e circuitos. Periodização e estratégia de alto rendimento.</p>
                 </div>
+                <div class="card">
+                    <i class="fas fa-child"></i>
+                    <div class="card-tag">Para os pequenos</div>
+                    <h3>Turma Infantil</h3>
+                    <p>Turma especialmente pensada para crianças, com atividades lúdicas e pedagógicas na areia.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -281,6 +447,7 @@
                 <span>🌱 Iniciante</span>
                 <span>⚡ Intermediário</span>
                 <span>🔥 Avançado</span>
+                <span>👦 Infantil</span>
             </div>
         </div>
     </section>
@@ -361,6 +528,92 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section id="faq" class="fade-in">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="divider"></div>
+            <p class="section-sub">Tire suas dúvidas antes de vir pra areia!</p>
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                        🏐 Precisa de equipamento?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Não. Todo o equipamento de vôlei é com a gente! Você só precisa aparecer com disposição e vontade de aprender.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                        🎁 Tem aula experimental?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim! Toda primeira aula é por nossa conta para você experimentar e se divertir com a gente. Sem compromisso — venha conhecer!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                        👦 Aceita crianças?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim! Temos uma turma especialmente pensada para crianças, com atividades lúdicas e dinâmicas para aprender o vôlei de praia de forma divertida.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM PREVIEW -->
+    <section id="instagram" class="fade-in">
+        <div class="container">
+            <h2>Siga no Instagram</h2>
+            <div class="divider"></div>
+            <div class="insta-header">
+                <div class="insta-header-icon"><i class="fab fa-instagram"></i></div>
+                <div class="insta-handle"><span>@</span>saquavolei</div>
+            </div>
+            <p class="insta-bio">Acompanhe os treinos, conquistas e momentos da nossa comunidade no Instagram 🏐🌊</p>
+            <div class="insta-grid">
+                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer">
+                    <img src="https://i.imgur.com/mdXHm1x.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220">
+                    <div class="insta-post-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer">
+                    <img src="https://i.imgur.com/ILGOLUt.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220">
+                    <div class="insta-post-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer">
+                    <img src="https://i.imgur.com/TEOuUXr.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220">
+                    <div class="insta-post-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer">
+                    <img src="https://i.imgur.com/5lpUQYp.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220">
+                    <div class="insta-post-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer">
+                    <img src="https://i.imgur.com/xmWBk3t.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220">
+                    <div class="insta-post-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer">
+                    <img src="https://i.imgur.com/1rFOY7j.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220">
+                    <div class="insta-post-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+            </div>
+            <div class="insta-cta">
+                <a href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer" class="btn-instagram-solid">
+                    <i class="fab fa-instagram"></i> Ver perfil completo
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section id="galeria" class="fade-in">
         <div class="container">
             <h2>Galeria</h2>
@@ -426,7 +679,7 @@
                         <li><a href="#sobre">Sobre nós</a></li>
                         <li><a href="#modalidades">Turmas</a></li>
                         <li><a href="#horarios">Horários</a></li>
-                        <li><a href="#diferenciais">Diferenciais</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#localizacao">Localização</a></li>
                     </ul>
                 </div>
@@ -467,6 +720,18 @@
             const header = document.querySelector('header');
             header.style.boxShadow = window.scrollY > 50 ? '0 2px 20px rgba(0,0,0,0.2)' : 'none';
         });
+        function toggleFaq(btn) {
+            const item = btn.closest('.faq-item');
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(el => {
+                el.classList.remove('open');
+                el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+            if (!isOpen) {
+                item.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        }
     </script>
 </body>
 </html>
