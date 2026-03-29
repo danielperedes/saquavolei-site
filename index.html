@@ -135,204 +135,142 @@
         .card-tag { display: inline-block; background: var(--amarelo); color: #333; padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.8rem; margin-bottom: 0.8rem; font-weight: 600; }
         #modalidades { background: linear-gradient(135deg, #f0f8ff, #fff8ee); }
 
-        /* ===== HORÁRIOS — novo layout ===== */
+        /* ===== HORÁRIOS ===== */
         #horarios { background: var(--azul-mar); color: var(--branco); }
         #horarios h2 { color: var(--branco); }
         #horarios .divider { background: var(--amarelo); }
         #horarios .section-sub { color: rgba(255,255,255,0.85); margin-bottom: 2.5rem; }
-
-        /* Aviso de dias */
-        .horarios-dias {
-            display: flex; justify-content: center; gap: 1rem;
-            flex-wrap: wrap; margin-bottom: 2.5rem;
-        }
-        .dia-pill {
-            background: rgba(255,255,255,0.15);
-            border: 1.5px solid rgba(255,255,255,0.4);
-            color: var(--branco); padding: 0.5rem 1.4rem;
-            border-radius: 50px; font-weight: 600; font-size: 1rem;
-            backdrop-filter: blur(4px);
-        }
-
-        /* Grade de horários */
-        .horario-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 820px;
-            margin: 0 auto;
-        }
-        .horario-row {
-            display: grid;
-            grid-template-columns: 110px 1fr;
-            align-items: stretch;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: background 0.3s;
-        }
+        .horarios-dias { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+        .dia-pill { background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.4); color: var(--branco); padding: 0.5rem 1.4rem; border-radius: 50px; font-weight: 600; font-size: 1rem; backdrop-filter: blur(4px); }
+        .horario-cards { display: flex; flex-direction: column; gap: 1rem; max-width: 820px; margin: 0 auto; }
+        .horario-row { display: grid; grid-template-columns: 110px 1fr; align-items: stretch; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; overflow: hidden; transition: background 0.3s; }
         .horario-row:hover { background: rgba(255,255,255,0.14); }
-        .horario-hora {
-            background: rgba(0,0,0,0.18);
-            display: flex; align-items: center; justify-content: center;
-            flex-direction: column;
-            padding: 1.2rem 0.8rem;
-            border-right: 1px solid rgba(255,255,255,0.15);
-        }
-        .horario-hora strong {
-            font-size: 1.6rem; font-weight: 700; color: var(--amarelo);
-            line-height: 1;
-        }
-        .horario-hora span {
-            font-size: 0.7rem; opacity: 0.7; margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.5px;
-        }
-        .horario-info {
-            padding: 1.2rem 1.5rem;
-            display: flex; flex-direction: column; justify-content: center; gap: 0.3rem;
-        }
-        .horario-turma {
-            font-size: 1.05rem; font-weight: 600; color: var(--branco);
-        }
-        .horario-tags {
-            display: flex; flex-wrap: wrap; gap: 0.4rem;
-        }
-        .htag {
-            background: rgba(255,255,255,0.15);
-            border: 1px solid rgba(255,255,255,0.3);
-            color: rgba(255,255,255,0.9);
-            padding: 0.2rem 0.7rem;
-            border-radius: 50px; font-size: 0.78rem;
-        }
-        .htag.destaque {
-            background: var(--amarelo);
-            border-color: var(--amarelo);
-            color: #333; font-weight: 600;
-        }
-
-        .horarios-nota {
-            text-align: center; margin-top: 2.5rem;
-            color: rgba(255,255,255,0.7); font-size: 0.9rem;
-        }
-        .horarios-nota a {
-            color: var(--amarelo); font-weight: 600; text-decoration: none;
-        }
+        .horario-hora { background: rgba(0,0,0,0.18); display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 1.2rem 0.8rem; border-right: 1px solid rgba(255,255,255,0.15); }
+        .horario-hora strong { font-size: 1.6rem; font-weight: 700; color: var(--amarelo); line-height: 1; }
+        .horario-hora span { font-size: 0.7rem; opacity: 0.7; margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .horario-info { padding: 1.2rem 1.5rem; display: flex; flex-direction: column; justify-content: center; gap: 0.3rem; }
+        .horario-turma { font-size: 1.05rem; font-weight: 600; color: var(--branco); }
+        .horario-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .htag { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.9); padding: 0.2rem 0.7rem; border-radius: 50px; font-size: 0.78rem; }
+        .htag.destaque { background: var(--amarelo); border-color: var(--amarelo); color: #333; font-weight: 600; }
+        .horarios-nota { text-align: center; margin-top: 2.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+        .horarios-nota a { color: var(--amarelo); font-weight: 600; text-decoration: none; }
         .horarios-nota a:hover { text-decoration: underline; }
 
         #diferenciais { background: var(--branco); }
+
+        /* ===== AVALIAÇÕES — CARROSSEL ===== */
         #avaliacoes { background: #f8faff; }
-        .avaliacao .estrelas { color: var(--amarelo); font-size: 1.4rem; margin-bottom: 0.8rem; }
-        .avaliacao .autor { margin-top: 0.8rem; font-weight: 600; color: var(--azul-mar); font-size: 0.9rem; }
-        .nota-geral { text-align: center; font-size: 3rem; font-weight: 700; color: var(--azul-mar); margin-bottom: 2rem; }
+        .nota-geral { text-align: center; font-size: 3rem; font-weight: 700; color: var(--azul-mar); margin-bottom: 2.5rem; }
         .nota-geral span { display: block; font-size: 1rem; color: #666; font-weight: 400; }
+
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel-track-outer {
+            overflow: hidden;
+            padding: 1rem 0 1.5rem;
+            /* fade edges */
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+        }
+        .carousel-track {
+            display: flex;
+            gap: 1.5rem;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+        .carousel-card {
+            background: var(--branco);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            min-width: 320px;
+            max-width: 320px;
+            flex-shrink: 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .carousel-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(0,119,190,0.15);
+        }
+        .carousel-card .estrelas { color: var(--amarelo); font-size: 1.3rem; }
+        .carousel-card p { color: #555; font-size: 0.95rem; line-height: 1.7; flex: 1; }
+        .carousel-card .aspas {
+            font-size: 3rem; line-height: 0.5; color: var(--azul-claro); opacity: 0.4;
+            font-family: Georgia, serif; align-self: flex-start; margin-bottom: 0.5rem;
+        }
+
+        /* Controles */
+        .carousel-controls {
+            display: flex; align-items: center; justify-content: center;
+            gap: 1rem; margin-top: 1.5rem;
+        }
+        .carousel-btn {
+            width: 42px; height: 42px; border-radius: 50%;
+            background: var(--azul-mar); color: var(--branco);
+            border: none; cursor: pointer; font-size: 1rem;
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0,119,190,0.3);
+        }
+        .carousel-btn:hover { background: #005a8e; transform: scale(1.08); }
+        .carousel-dots {
+            display: flex; gap: 0.5rem; align-items: center;
+        }
+        .carousel-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: #ccc; border: none; cursor: pointer;
+            transition: background 0.3s, width 0.3s;
+            padding: 0;
+        }
+        .carousel-dot.active {
+            background: var(--azul-mar);
+            width: 22px;
+            border-radius: 4px;
+        }
+
         #galeria { background: var(--areia); }
         .galeria-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-        .galeria-item {
-            height: 240px;
-            background-size: cover; background-position: center;
-            border-radius: 15px;
-            position: relative; overflow: hidden;
-            cursor: pointer; transition: transform 0.3s;
-        }
+        .galeria-item { height: 240px; background-size: cover; background-position: center; border-radius: 15px; position: relative; overflow: hidden; cursor: pointer; transition: transform 0.3s; }
         .galeria-item:hover { transform: scale(1.03); }
-        .galeria-item::before {
-            content: ''; position: absolute; inset: 0;
-            background: rgba(0,119,190,0.25); border-radius: 15px;
-            transition: background 0.3s;
-        }
+        .galeria-item::before { content: ''; position: absolute; inset: 0; background: rgba(0,119,190,0.25); border-radius: 15px; transition: background 0.3s; }
         .galeria-item:hover::before { background: rgba(0,119,190,0.05); }
 
         /* ===== FAQ ===== */
         #faq { background: #f8faff; }
         .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
-        .faq-item {
-            background: var(--branco);
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            overflow: hidden;
-            transition: box-shadow 0.3s;
-        }
+        .faq-item { background: var(--branco); border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); overflow: hidden; transition: box-shadow 0.3s; }
         .faq-item:hover { box-shadow: 0 8px 30px rgba(0,119,190,0.12); }
-        .faq-question {
-            width: 100%; display: flex; justify-content: space-between; align-items: center;
-            padding: 1.4rem 1.8rem; background: none; border: none;
-            font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 600;
-            color: var(--azul-mar); cursor: pointer; text-align: left; gap: 1rem;
-            transition: color 0.3s;
-        }
+        .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 1.8rem; background: none; border: none; font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--azul-mar); cursor: pointer; text-align: left; gap: 1rem; transition: color 0.3s; }
         .faq-question:hover { color: #005a8e; }
-        .faq-icon {
-            flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
-            background: var(--amarelo); display: flex; align-items: center; justify-content: center;
-            font-size: 1.1rem; font-weight: 700; color: #333;
-            transition: transform 0.35s ease, background 0.3s;
-        }
+        .faq-icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--amarelo); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 700; color: #333; transition: transform 0.35s ease, background 0.3s; }
         .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--azul-mar); color: var(--branco); }
-        .faq-answer {
-            max-height: 0; overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.3s ease;
-            padding: 0 1.8rem;
-        }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; padding: 0 1.8rem; }
         .faq-item.open .faq-answer { max-height: 200px; padding: 0 1.8rem 1.4rem; }
         .faq-answer p { color: #555; font-size: 0.98rem; line-height: 1.7; }
 
         /* ===== INSTAGRAM PREVIEW ===== */
         #instagram { background: var(--branco); }
-        .insta-header {
-            display: flex; align-items: center; justify-content: center;
-            gap: 1rem; margin-bottom: 1rem;
-        }
-        .insta-header-icon {
-            width: 52px; height: 52px; border-radius: 50%;
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-            display: flex; align-items: center; justify-content: center;
-            color: #fff; font-size: 1.5rem;
-        }
+        .insta-header { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+        .insta-header-icon { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; }
         .insta-handle { font-size: 1.3rem; font-weight: 700; color: #333; }
         .insta-handle span { color: var(--azul-mar); }
         .insta-bio { text-align: center; color: #666; font-size: 0.95rem; margin-bottom: 2.5rem; }
-        .insta-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.6rem;
-            max-width: 680px;
-            margin: 0 auto 2.5rem;
-        }
-        .insta-post {
-            aspect-ratio: 1;
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-        }
-        .insta-post img {
-            width: 100%; height: 100%; object-fit: cover;
-            transition: transform 0.4s ease;
-        }
+        .insta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; max-width: 680px; margin: 0 auto 2.5rem; }
+        .insta-post { aspect-ratio: 1; border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; }
+        .insta-post img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
         .insta-post:hover img { transform: scale(1.07); }
-        .insta-post-overlay {
-            position: absolute; inset: 0;
-            background: rgba(0,119,190,0);
-            display: flex; align-items: center; justify-content: center;
-            transition: background 0.3s;
-        }
-        .insta-post:hover .insta-post-overlay {
-            background: rgba(0,119,190,0.45);
-        }
-        .insta-post-overlay i {
-            color: #fff; font-size: 1.8rem;
-            opacity: 0; transform: scale(0.7);
-            transition: opacity 0.3s, transform 0.3s;
-        }
+        .insta-post-overlay { position: absolute; inset: 0; background: rgba(0,119,190,0); display: flex; align-items: center; justify-content: center; transition: background 0.3s; }
+        .insta-post:hover .insta-post-overlay { background: rgba(0,119,190,0.45); }
+        .insta-post-overlay i { color: #fff; font-size: 1.8rem; opacity: 0; transform: scale(0.7); transition: opacity 0.3s, transform 0.3s; }
         .insta-post:hover .insta-post-overlay i { opacity: 1; transform: scale(1); }
         .insta-cta { text-align: center; }
-        .btn-instagram-solid {
-            display: inline-flex; align-items: center; gap: 0.6rem;
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-            color: #fff; padding: 0.9rem 2rem; border-radius: 50px;
-            font-weight: 700; font-size: 1rem; text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+        .btn-instagram-solid { display: inline-flex; align-items: center; gap: 0.6rem; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; padding: 0.9rem 2rem; border-radius: 50px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; }
         .btn-instagram-solid:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(220,39,67,0.35); }
 
         #localizacao { background: var(--branco); }
@@ -360,31 +298,15 @@
         .social { display: flex; gap: 1rem; margin-top: 1rem; }
         .social a { color: #ccc; font-size: 1.5rem; transition: color 0.3s; }
         .social a:hover { color: var(--amarelo); }
-        .whatsapp-float {
-            position: fixed; bottom: 25px; right: 25px;
-            background: #25D366; color: var(--branco);
-            width: 65px; height: 65px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 2rem; box-shadow: 0 5px 20px rgba(37,211,102,0.5);
-            transition: transform 0.3s; z-index: 1000; text-decoration: none;
-            animation: pulse 2s infinite;
-        }
+        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: var(--branco); width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 5px 20px rgba(37,211,102,0.5); transition: transform 0.3s; z-index: 1000; text-decoration: none; animation: pulse 2s infinite; }
         .whatsapp-float:hover { transform: scale(1.1); }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 5px 20px rgba(37,211,102,0.5); }
-            50% { box-shadow: 0 5px 35px rgba(37,211,102,0.8); }
-        }
+        @keyframes pulse { 0%, 100% { box-shadow: 0 5px 20px rgba(37,211,102,0.5); } 50% { box-shadow: 0 5px 35px rgba(37,211,102,0.8); } }
         .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
         @media (max-width: 768px) {
             .hamburger { display: flex; }
-            .nav-links {
-                position: fixed; top: 70px; left: -100%; width: 100%;
-                height: calc(100vh - 70px); background: var(--azul-mar);
-                flex-direction: column; justify-content: start; align-items: center;
-                padding-top: 2rem; transition: left 0.3s; gap: 1.5rem;
-            }
+            .nav-links { position: fixed; top: 70px; left: -100%; width: 100%; height: calc(100vh - 70px); background: var(--azul-mar); flex-direction: column; justify-content: start; align-items: center; padding-top: 2rem; transition: left 0.3s; gap: 1.5rem; }
             .nav-links.active { left: 0; }
             #hero h1 { font-size: 2.2rem; }
             #hero p { font-size: 1.1rem; }
@@ -396,11 +318,13 @@
             .horario-row { grid-template-columns: 90px 1fr; }
             .horario-hora strong { font-size: 1.3rem; }
             .horario-turma { font-size: 0.95rem; }
+            .carousel-card { min-width: 280px; max-width: 280px; }
         }
         @media (max-width: 480px) {
             .galeria-grid { grid-template-columns: 1fr; }
             .insta-grid { grid-template-columns: repeat(2, 1fr); }
             .horario-row { grid-template-columns: 80px 1fr; }
+            .carousel-card { min-width: 260px; max-width: 260px; }
         }
     </style>
 </head>
@@ -465,136 +389,63 @@
             <div class="divider"></div>
             <p class="section-sub">Encontre a turma ideal para o seu nível</p>
             <div class="cards">
-                <div class="card">
-                    <i class="fas fa-seedling"></i>
-                    <div class="card-tag">Para quem está começando</div>
-                    <h3>Iniciante</h3>
-                    <p>Aprenda os fundamentos do vôlei de praia em um ambiente descontraído e motivador. Sem pré-requisitos.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-running"></i>
-                    <div class="card-tag">Para quem já tem base</div>
-                    <h3>Intermediário</h3>
-                    <p>Aprimore passes, saques, ataques e bloqueios com treinos dinâmicos e táticos.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-bolt"></i>
-                    <div class="card-tag">Para quem quer evoluir</div>
-                    <h3>Avançado</h3>
-                    <p>Treinos técnicos e táticos intensos para elevar seu jogo a outro nível.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-trophy"></i>
-                    <div class="card-tag">Para competidores</div>
-                    <h3>Competitivo</h3>
-                    <p>Preparação focada para torneios e circuitos. Periodização e estratégia de alto rendimento.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-child"></i>
-                    <div class="card-tag">Para os pequenos</div>
-                    <h3>Turma Infantil</h3>
-                    <p>Turma especialmente pensada para crianças, com atividades lúdicas e pedagógicas na areia.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-users"></i>
-                    <div class="card-tag">Para jovens</div>
-                    <h3>Adolescentes</h3>
-                    <p>Turma exclusiva para adolescentes, com metodologia adaptada ao desenvolvimento e energia dessa fase.</p>
-                </div>
+                <div class="card"><i class="fas fa-seedling"></i><div class="card-tag">Para quem está começando</div><h3>Iniciante</h3><p>Aprenda os fundamentos do vôlei de praia em um ambiente descontraído e motivador. Sem pré-requisitos.</p></div>
+                <div class="card"><i class="fas fa-running"></i><div class="card-tag">Para quem já tem base</div><h3>Intermediário</h3><p>Aprimore passes, saques, ataques e bloqueios com treinos dinâmicos e táticos.</p></div>
+                <div class="card"><i class="fas fa-bolt"></i><div class="card-tag">Para quem quer evoluir</div><h3>Avançado</h3><p>Treinos técnicos e táticos intensos para elevar seu jogo a outro nível.</p></div>
+                <div class="card"><i class="fas fa-trophy"></i><div class="card-tag">Para competidores</div><h3>Competitivo</h3><p>Preparação focada para torneios e circuitos. Periodização e estratégia de alto rendimento.</p></div>
+                <div class="card"><i class="fas fa-child"></i><div class="card-tag">Para os pequenos</div><h3>Turma Infantil</h3><p>Turma especialmente pensada para crianças, com atividades lúdicas e pedagógicas na areia.</p></div>
+                <div class="card"><i class="fas fa-users"></i><div class="card-tag">Para jovens</div><h3>Adolescentes</h3><p>Turma exclusiva para adolescentes, com metodologia adaptada ao desenvolvimento e energia dessa fase.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- HORÁRIOS — layout redesenhado -->
     <section id="horarios" class="fade-in">
         <div class="container">
             <h2>Horários de Treino</h2>
             <div class="divider"></div>
             <p class="section-sub">As aulas acontecem toda semana nos mesmos dias e horários</p>
-
-            <!-- Dias da semana -->
             <div class="horarios-dias">
                 <div class="dia-pill">📅 Segunda-feira</div>
                 <div class="dia-pill">📅 Quarta-feira</div>
                 <div class="dia-pill">📅 Sexta-feira</div>
             </div>
-
-            <!-- Grade de horários -->
             <div class="horario-cards">
-
                 <div class="horario-row">
-                    <div class="horario-hora">
-                        <strong>7h</strong>
-                        <span>manhã</span>
-                    </div>
+                    <div class="horario-hora"><strong>7h</strong><span>manhã</span></div>
                     <div class="horario-info">
                         <div class="horario-turma">🏐 Adultos</div>
-                        <div class="horario-tags">
-                            <span class="htag destaque">Iniciante</span>
-                            <span class="htag destaque">Intermediário</span>
-                            <span class="htag destaque">Avançado</span>
-                        </div>
+                        <div class="horario-tags"><span class="htag destaque">Iniciante</span><span class="htag destaque">Intermediário</span><span class="htag destaque">Avançado</span></div>
                     </div>
                 </div>
-
                 <div class="horario-row">
-                    <div class="horario-hora">
-                        <strong>8h</strong>
-                        <span>manhã</span>
-                    </div>
+                    <div class="horario-hora"><strong>8h</strong><span>manhã</span></div>
                     <div class="horario-info">
                         <div class="horario-turma">🏆 Infantil &amp; Competição</div>
-                        <div class="horario-tags">
-                            <span class="htag">Turma Infantil</span>
-                            <span class="htag">Competição</span>
-                        </div>
+                        <div class="horario-tags"><span class="htag">Turma Infantil</span><span class="htag">Competição</span></div>
                     </div>
                 </div>
-
                 <div class="horario-row">
-                    <div class="horario-hora">
-                        <strong>15h30</strong>
-                        <span>tarde</span>
-                    </div>
+                    <div class="horario-hora"><strong>15h30</strong><span>tarde</span></div>
                     <div class="horario-info">
                         <div class="horario-turma">🥇 Turma de Competição</div>
-                        <div class="horario-tags">
-                            <span class="htag">Alto rendimento</span>
-                            <span class="htag">Torneios &amp; Circuitos</span>
-                        </div>
+                        <div class="horario-tags"><span class="htag">Alto rendimento</span><span class="htag">Torneios &amp; Circuitos</span></div>
                     </div>
                 </div>
-
                 <div class="horario-row">
-                    <div class="horario-hora">
-                        <strong>16h</strong>
-                        <span>tarde</span>
-                    </div>
+                    <div class="horario-hora"><strong>16h</strong><span>tarde</span></div>
                     <div class="horario-info">
                         <div class="horario-turma">🧑 Turma de Adolescentes</div>
-                        <div class="horario-tags">
-                            <span class="htag">Metodologia exclusiva</span>
-                            <span class="htag">Jovens</span>
-                        </div>
+                        <div class="horario-tags"><span class="htag">Metodologia exclusiva</span><span class="htag">Jovens</span></div>
                     </div>
                 </div>
-
                 <div class="horario-row">
-                    <div class="horario-hora">
-                        <strong>17h</strong>
-                        <span>tarde</span>
-                    </div>
+                    <div class="horario-hora"><strong>17h</strong><span>tarde</span></div>
                     <div class="horario-info">
                         <div class="horario-turma">🌅 Infantil &amp; Adultos</div>
-                        <div class="horario-tags">
-                            <span class="htag">Turma Infantil</span>
-                            <span class="htag">Adultos</span>
-                        </div>
+                        <div class="horario-tags"><span class="htag">Turma Infantil</span><span class="htag">Adultos</span></div>
                     </div>
                 </div>
-
             </div>
-
             <p class="horarios-nota">
                 ❓ Dúvidas sobre qual turma é ideal para você?
                 <a href="https://wa.me/5522992017662?text=Ol%C3%A1!%20Quero%20saber%20qual%20turma%20%C3%A9%20ideal%20para%20mim!" target="_blank">Fale com a gente no WhatsApp →</a>
@@ -607,72 +458,104 @@
             <h2>Por que escolher o Saquavôlei?</h2>
             <div class="divider"></div>
             <div class="cards">
-                <div class="card">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <h3>Prof. Pedro e Equipe</h3>
-                    <p>Profissionais experientes e comprometidos em sempre passar os fundamentos com as melhores técnicas.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-heart"></i>
-                    <h3>Ambiente Acolhedor</h3>
-                    <p>Um grupo totalmente democrático e receptivo, onde todos se sentem parte da família Saquavôlei.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-dumbbell"></i>
-                    <h3>Treinos Técnicos</h3>
-                    <p>Metodologia estruturada para evolução real, do aluno inicial ao suporte ao avançado.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-users"></i>
-                    <h3>Comunidade Ativa</h3>
-                    <p>Boas amizades, um grupo movido pelo amor ao esporte, dentro e fora da areia.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Localização Privilegiada</h3>
-                    <p>Na praia de Itaúna, em Saquarema-RJ — capital brasileira do vôlei de praia.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-sun"></i>
-                    <h3>Estrutura Completa</h3>
-                    <p>Centro de treinamento de vôlei completo na areia, em um cenário paradisíaco.</p>
-                </div>
+                <div class="card"><i class="fas fa-chalkboard-teacher"></i><h3>Prof. Pedro e Equipe</h3><p>Profissionais experientes e comprometidos em sempre passar os fundamentos com as melhores técnicas.</p></div>
+                <div class="card"><i class="fas fa-heart"></i><h3>Ambiente Acolhedor</h3><p>Um grupo totalmente democrático e receptivo, onde todos se sentem parte da família Saquavôlei.</p></div>
+                <div class="card"><i class="fas fa-dumbbell"></i><h3>Treinos Técnicos</h3><p>Metodologia estruturada para evolução real, do aluno inicial ao suporte ao avançado.</p></div>
+                <div class="card"><i class="fas fa-users"></i><h3>Comunidade Ativa</h3><p>Boas amizades, um grupo movido pelo amor ao esporte, dentro e fora da areia.</p></div>
+                <div class="card"><i class="fas fa-map-marker-alt"></i><h3>Localização Privilegiada</h3><p>Na praia de Itaúna, em Saquarema-RJ — capital brasileira do vôlei de praia.</p></div>
+                <div class="card"><i class="fas fa-sun"></i><h3>Estrutura Completa</h3><p>Centro de treinamento de vôlei completo na areia, em um cenário paradisíaco.</p></div>
             </div>
         </div>
     </section>
 
+    <!-- AVALIAÇÕES — CARROSSEL -->
     <section id="avaliacoes" class="fade-in">
         <div class="container">
             <h2>O que dizem nossos alunos</h2>
             <div class="divider"></div>
             <div class="nota-geral">
                 ⭐ 4.8
-                <span>Avaliação no Google Maps</span>
+                <span>Avaliação no Google Maps &bull; 11 avaliações</span>
             </div>
-            <div class="cards">
-                <div class="card avaliacao">
-                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
-                    <p>"Excelente centro de treinamento para quem busca o vôlei de praia a lazer ou profissional. Tem turmas iniciantes, intermediários e para competições. Recomendo de olhos fechados!"</p>
+
+            <div class="carousel-wrapper">
+                <div class="carousel-track-outer">
+                    <div class="carousel-track" id="carouselTrack">
+
+                        <div class="carousel-card">
+                            <div class="aspas">“</div>
+                            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                            <p>Excelente centro de treinamento para quem busca o vôlei de praia a lazer ou profissional. Tem turmas iniciantes, intermediários e para competições. Recomendo de olhos fechados!</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="aspas">“</div>
+                            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                            <p>Melhor centro de treinamento de vôlei aonde fazemos boas amizades, um grupo totalmente democrático e receptivo para os iniciantes do esporte, todos ali movidos pelo amor ao esporte 🏐🏅</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="aspas">“</div>
+                            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                            <p>Foi show! Professor super competente e comprometido em sempre passar os fundamentos, com as melhores técnicas, desse esporte que amo de paixão.</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="aspas">“</div>
+                            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                            <p>Sensacional, o lugar, as pessoas, os professores. Centro de treinamento de vôlei completo. Com um ótimo profissional!!</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="aspas">“</div>
+                            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                            <p>Lugar maravilhoso com gente mais Mara ainda!!! Adoro as aulas do prof Pedro 🙌</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="aspas">“</div>
+                            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                            <p>Lugar muito bom para aprender o vôlei de praia, o professor Pedro manda muito bem! Recomendo a todos que gostam da prática de esporte. Ambiente agradável e familiar.</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="aspas">“</div>
+                            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                            <p>Recomendo o Saquavôlei a todos que gostam da prática de esporte. Ambiente agradável e familiar.</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="aspas">“</div>
+                            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                            <p>De longe o melhor grupo. O melhor professor. O melhor clima. ❤️</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="aspas">“</div>
+                            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                            <p>É sempre ótimo estar com essa Galera!</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="aspas">“</div>
+                            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                            <p>Melhor CT de Saquarema, uma grande família!!!</p>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="aspas">“</div>
+                            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                            <p>Excelentes professores! Top demais!</p>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="card avaliacao">
-                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
-                    <p>"Melhor centro de treinamento de vôlei aonde fazemos boas amizades, um grupo totalmente democrático e receptivo para os iniciantes do esporte, todos ali movidos pelo amor ao esporte 🏐🏅"</p>
-                </div>
-                <div class="card avaliacao">
-                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
-                    <p>"Foi show! Professor super competente e comprometido em sempre passar os fundamentos, com as melhores técnicas, desse esporte que amo de paixão."</p>
-                </div>
-                <div class="card avaliacao">
-                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
-                    <p>"Sensacional, o lugar, as pessoas, os professores. Centro de treinamento de vôlei completo. Com um ótimo profissional!!"</p>
-                </div>
-                <div class="card avaliacao">
-                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
-                    <p>"Lugar maravilhoso com gente mais Mara ainda!!! Adoro as aulas do prof Pedro 🙌"</p>
-                </div>
-                <div class="card avaliacao">
-                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
-                    <p>"Lugar muito bom para aprender o vôlei de praia, o professor Pedro manda muito bem! Recomendo a todos que gostam da prática de esporte. Ambiente agradável e familiar."</p>
+
+                <!-- Controles -->
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="prevBtn" aria-label="Anterior">←</button>
+                    <div class="carousel-dots" id="carouselDots"></div>
+                    <button class="carousel-btn" id="nextBtn" aria-label="Próximo">→</button>
                 </div>
             </div>
         </div>
@@ -685,37 +568,27 @@
             <div class="divider"></div>
             <p class="section-sub">Tire suas dúvidas antes de vir pra areia!</p>
             <div class="faq-list">
-
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
                         🏐 Precisa de equipamento?
                         <span class="faq-icon">+</span>
                     </button>
-                    <div class="faq-answer">
-                        <p>Não. Todo o equipamento de vôlei é com a gente! Você só precisa aparecer com disposição e vontade de aprender.</p>
-                    </div>
+                    <div class="faq-answer"><p>Não. Todo o equipamento de vôlei é com a gente! Você só precisa aparecer com disposição e vontade de aprender.</p></div>
                 </div>
-
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
                         🎁 Tem aula experimental?
                         <span class="faq-icon">+</span>
                     </button>
-                    <div class="faq-answer">
-                        <p>Sim! Toda primeira aula é por nossa conta para você experimentar e se divertir com a gente. Sem compromisso — venha conhecer!</p>
-                    </div>
+                    <div class="faq-answer"><p>Sim! Toda primeira aula é por nossa conta para você experimentar e se divertir com a gente. Sem compromisso — venha conhecer!</p></div>
                 </div>
-
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
                         👦 Aceita crianças?
                         <span class="faq-icon">+</span>
                     </button>
-                    <div class="faq-answer">
-                        <p>Sim! Temos uma turma especialmente pensada para crianças, com atividades lúdicas e dinâmicas para aprender o vôlei de praia de forma divertida.</p>
-                    </div>
+                    <div class="faq-answer"><p>Sim! Temos uma turma especialmente pensada para crianças, com atividades lúdicas e dinâmicas para aprender o vôlei de praia de forma divertida.</p></div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -731,30 +604,12 @@
             </div>
             <p class="insta-bio">Acompanhe os treinos, conquistas e momentos da nossa comunidade no Instagram 🏐🌊</p>
             <div class="insta-grid">
-                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.imgur.com/mdXHm1x.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220">
-                    <div class="insta-post-overlay"><i class="fab fa-instagram"></i></div>
-                </a>
-                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.imgur.com/ILGOLUt.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220">
-                    <div class="insta-post-overlay"><i class="fab fa-instagram"></i></div>
-                </a>
-                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.imgur.com/TEOuUXr.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220">
-                    <div class="insta-post-overlay"><i class="fab fa-instagram"></i></div>
-                </a>
-                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.imgur.com/5lpUQYp.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220">
-                    <div class="insta-post-overlay"><i class="fab fa-instagram"></i></div>
-                </a>
-                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.imgur.com/xmWBk3t.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220">
-                    <div class="insta-post-overlay"><i class="fab fa-instagram"></i></div>
-                </a>
-                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.imgur.com/1rFOY7j.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220">
-                    <div class="insta-post-overlay"><i class="fab fa-instagram"></i></div>
-                </a>
+                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer"><img src="https://i.imgur.com/mdXHm1x.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220"><div class="insta-post-overlay"><i class="fab fa-instagram"></i></div></a>
+                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer"><img src="https://i.imgur.com/ILGOLUt.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220"><div class="insta-post-overlay"><i class="fab fa-instagram"></i></div></a>
+                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer"><img src="https://i.imgur.com/TEOuUXr.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220"><div class="insta-post-overlay"><i class="fab fa-instagram"></i></div></a>
+                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer"><img src="https://i.imgur.com/5lpUQYp.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220"><div class="insta-post-overlay"><i class="fab fa-instagram"></i></div></a>
+                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer"><img src="https://i.imgur.com/xmWBk3t.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220"><div class="insta-post-overlay"><i class="fab fa-instagram"></i></div></a>
+                <a class="insta-post" href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer"><img src="https://i.imgur.com/1rFOY7j.jpg" alt="Post Saquavôlei" loading="lazy" width="220" height="220"><div class="insta-post-overlay"><i class="fab fa-instagram"></i></div></a>
             </div>
             <div class="insta-cta">
                 <a href="https://www.instagram.com/saquavolei" target="_blank" rel="noopener noreferrer" class="btn-instagram-solid">
@@ -800,12 +655,8 @@
         <div class="container">
             <h2>Venha fazer parte do Saquavôlei!</h2>
             <p>Comece sua jornada no vôlei de praia hoje. Entre em contato e agende sua aula experimental!</p>
-            <a href="https://wa.me/5522992017662?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20no%20Saquav%C3%B4lei!" target="_blank" class="btn btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-            <a href="https://www.instagram.com/saquavolei" target="_blank" class="btn btn-instagram">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
+            <a href="https://wa.me/5522992017662?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20no%20Saquav%C3%B4lei!" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://www.instagram.com/saquavolei" target="_blank" class="btn btn-instagram"><i class="fab fa-instagram"></i> Instagram</a>
         </div>
     </section>
 
@@ -863,23 +714,29 @@
     </a>
 
     <script>
+        // --- Menu ---
         function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
         function closeMenu() { document.getElementById('navLinks').classList.remove('active'); }
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
+
+        // --- Scroll reveal ---
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // --- Header shadow ---
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.style.boxShadow = window.scrollY > 50 ? '0 2px 20px rgba(0,0,0,0.2)' : 'none';
+            document.querySelector('header').style.boxShadow = window.scrollY > 50 ? '0 2px 20px rgba(0,0,0,0.2)' : 'none';
         });
+
+        // --- FAQ ---
         function toggleFaq(btn) {
             const item = btn.closest('.faq-item');
             const isOpen = item.classList.contains('open');
@@ -887,11 +744,83 @@
                 el.classList.remove('open');
                 el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
             });
-            if (!isOpen) {
-                item.classList.add('open');
-                btn.setAttribute('aria-expanded', 'true');
-            }
+            if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
         }
+
+        // --- Carrossel de Avaliações ---
+        (function() {
+            const track = document.getElementById('carouselTrack');
+            const dotsContainer = document.getElementById('carouselDots');
+            const cards = track.querySelectorAll('.carousel-card');
+            const total = cards.length;
+            let current = 0;
+            let autoTimer;
+
+            // Calcular quantos cards visíveis por vez
+            function visibleCount() {
+                const w = track.parentElement.offsetWidth;
+                const cardW = cards[0].offsetWidth + 24; // card + gap
+                return Math.max(1, Math.floor(w / cardW));
+            }
+
+            // Total de "páginas" (grupos)
+            function pageCount() {
+                return Math.ceil(total / visibleCount());
+            }
+
+            // Criar dots
+            function buildDots() {
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < pageCount(); i++) {
+                    const d = document.createElement('button');
+                    d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+                    d.setAttribute('aria-label', 'Página ' + (i + 1));
+                    d.addEventListener('click', () => goTo(i * visibleCount()));
+                    dotsContainer.appendChild(d);
+                }
+            }
+
+            function updateDots() {
+                const page = Math.floor(current / visibleCount());
+                dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === page);
+                });
+            }
+
+            function goTo(idx) {
+                const max = total - visibleCount();
+                current = Math.max(0, Math.min(idx, max));
+                const cardW = cards[0].offsetWidth + 24;
+                track.style.transform = 'translateX(-' + (current * cardW) + 'px)';
+                updateDots();
+            }
+
+            function next() { goTo(current + visibleCount() >= total ? 0 : current + 1); }
+            function prev() { goTo(current <= 0 ? total - visibleCount() : current - 1); }
+
+            document.getElementById('nextBtn').addEventListener('click', () => { next(); resetAuto(); });
+            document.getElementById('prevBtn').addEventListener('click', () => { prev(); resetAuto(); });
+
+            function startAuto() { autoTimer = setInterval(next, 4000); }
+            function resetAuto() { clearInterval(autoTimer); startAuto(); }
+
+            // Touch/swipe
+            let startX = 0;
+            track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); resetAuto(); }
+            });
+
+            // Pausar ao passar o mouse
+            track.parentElement.addEventListener('mouseenter', () => clearInterval(autoTimer));
+            track.parentElement.addEventListener('mouseleave', startAuto);
+
+            // Init
+            buildDots();
+            startAuto();
+            window.addEventListener('resize', () => { buildDots(); goTo(0); });
+        })();
     </script>
 </body>
 </html>
